@@ -1,9 +1,8 @@
 //Java program to read data of various types
 
-import java.util.*;
 import java.util.Scanner;
 
-public class ReadData{
+public class GetData{
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
 
@@ -24,5 +23,7 @@ public class ReadData{
 		System.out.println("Age: "+age);
 		System.out.println("Number: "+mobileNo);
 		System.out.println("CGPA: "+cgpa);
+
+		sc.close();
 	}
 }

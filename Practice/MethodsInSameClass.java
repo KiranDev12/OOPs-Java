@@ -1,8 +1,6 @@
 // Calling methods within the same class
 //Illustrate how to call static method a class from a method in same class
 
-import java.util.*;
-
 public class MethodsInSameClass{
 	public static void main(String args[]){
 		printOne();

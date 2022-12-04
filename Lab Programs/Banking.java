@@ -143,6 +143,7 @@ public class Banking{
 			}
 
 		}while(ch!=5);
+		in.close();
 	}
 }
 

@@ -1,6 +1,5 @@
 // Program to find area of the circle
 
-import java.util.*;
 import java.lang.Math;
 
 class Circle{
