@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 class ReadData{
     ReadData(){
-        int arr[][] = new int[5][6];
+        float arr[][] = new float[5][6];
     }
-    void input(arr[][]){
+    void input(){
         Scanner in = new Scanner(System.in);
         
     }
