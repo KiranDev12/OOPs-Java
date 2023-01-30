@@ -7,62 +7,58 @@
     Name of the program: _5MergeArray.java
  */
 
-import java.util.*;
+import java.util.Scanner;
 
-class ArrayInAndSort {
-    static void sort(int[] A, int[] B, int[] C, int m, int n) {
+class SortArray {
+    void sort(int[] a, int[] b, int[] c, int m, int n) {
         int i = 0, j = 0, k = 0;
         while (i < m && j < n) {
-            if (A[i] < B[j]) {
-                C[k++] = A[i++];
+            if (a[i] <= b[j]) {
+                c[k++] = a[i++];
             } else {
-                C[k++] = B[j++];
+                c[k++] = b[j++];
             }
         }
+
         for (; i < m; i++) {
-            C[k++] = A[i];
+            c[k++] = a[i];
         }
         for (; j < n; j++) {
-            C[k++] = B[j];
+            c[k++] = b[j];
         }
     }
 
-    static void input(int[] Arr, int n) {
+    void input(int[] a, int m) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter " + n + " elements of the array (In ASCENDING ORDER only): ");
-        for (int i = 0; i < n; i++) {
-            Arr[i] = sc.nextInt();
+        System.out.println("Enter " + m + " elements of array(IN ASCENDING ORDER)");
+        for (int i = 0; i < m; i++) {
+            a[i] = sc.nextInt();
         }
-        sc.close();
     }
 
-    static void displaySorted(int[] Arr, int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.print(Arr[i] + " ");
+    void display(int[] a, int m) {
+        for (int i = 0; i < m; i++) {
+            System.out.print(a[i] + " ");
         }
-        System.out.println();
     }
 }
 
 public class q5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the size of array~A: ");
-        int n1 = sc.nextInt();
-        int[] A = new int[n1];
-        ArrayInAndSort.input(A, n1);
-
-        System.out.print("Enter the size of array~B: ");
-        int n2 = sc.nextInt();
-        int[] B = new int[n2];
-        ArrayInAndSort.input(B, n2);
-
-        int n3 = n1 + n2;
-        int[] C = new int[n3];
-        ArrayInAndSort.sort(A, B, C, n1, n2);
-        System.out.print("Merged Sorted Array~C is: ");
-        ArrayInAndSort.displaySorted(C, n3);
-        sc.close();
+        SortArray arr = new SortArray();
+        System.out.println("Enter the size of 1st array");
+        int m = sc.nextInt();
+        int[] a = new int[m];
+        arr.input(a, m);
+        System.out.println("Enter the size of 2nd array");
+        int n = sc.nextInt();
+        int[] b = new int[n];
+        arr.input(b, n);
+        int o = n + m;
+        int[] c = new int[o];
+        arr.sort(a, b, c, m, n);
+        System.out.println("Merged and Sorted array is");
+        arr.display(c, o);
     }
 }
